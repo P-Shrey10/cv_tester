@@ -1,29 +1,60 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+import Login from "../views/newLogin.vue";
+import Home from "../components/Home.vue";
+import Profile from "../components/Profile.vue";
+import UploadProfile from "../components/UploadProfile.vue";
+import ScheduleInterview from "../components/ScheduleInterview.vue";
+import OfferManagement from "../components/OfferManagement.vue";
+
+import EvaluateAssignment from "../components/EvaluateAssignment.vue";
+
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "login",
+    component: Login,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: "/home",
+    name: "home",
+    component: Home,
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: Profile,
+  },
+  {
+    path: "/upload-profile",
+    name: "upload-profile",
+    component: UploadProfile,
+  },
+  {
+    path: "/schedule-interview",
+    name: "schedule-interview",
+    component: ScheduleInterview,
+  },
+  {
+    path: "/offer-management",
+    name: "offer-management",
+    component: OfferManagement,
+  },
+
+  {
+    path: "/evaluate-assignment",
+    name: "evaluate-assignment",
+    component: EvaluateAssignment,
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
